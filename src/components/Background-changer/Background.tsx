@@ -18,7 +18,7 @@ function Background() {
           className={styles.buttonclass} 
           style={{backgroundColor:"green" }} 
           onClick={()=>setcolor("green")}>
-            green Lorem ipsum dolor sit, amet consectetur adipisicing elit. In qui quaerat animi sit aliquam, dicta libero! Necessitatibus, recusandae assumenda porro nisi obcaecati ad eos dolore nemo saepe cupiditate quaerat praesentium?
+            green
         </button>
         <button 
           className={styles.buttonclass} 
