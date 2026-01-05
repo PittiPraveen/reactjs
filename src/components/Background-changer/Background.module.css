@@ -1,0 +1,107 @@
+/* Background.module.css */
+.container {
+  background: white;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 20px;
+  position: fixed; /* Positions container relative to viewport */
+  bottom: 20px; /* Places container at bottom */
+  left:50%;/* Centers horizontally */
+  transform: translateX(-50%); /* Perfectly centers the container */
+  width: auto; /* Width adjusts to content */
+  max-width: 90%; /* Prevents container from being too wide on small screens */
+  overflow: hidden; /* Contains buttons within the container - prevents buttons from spilling outside */
+  gap: 10px; /* Adds space between buttons */
+}
+
+.buttonclass{
+  border-radius: 10px;
+  padding: 10px;
+  outline: none; /* Removes outline */
+  border: none; /* Optional: removes border too */
+  cursor: pointer; /* Shows pointer cursor on hover */
+  
+  /* ============================================
+     UNIFORM BUTTON SIZE - TWO APPROACHES:
+     ============================================ */
+  
+  /* APPROACH 1: STANDARD/TRADITIONAL WAY (Currently Used)
+     =====================================================
+     This is the MOST COMMON and WIDELY USED approach.
+     - Easy to understand for beginners
+     - Works in all browsers (even very old ones)
+     - Explicit and clear - you see exactly what's happening
+     - More verbose (requires 6 properties)
+     - Standard practice in most codebases
+     */
+  width: 120px; /* Fixed width - all buttons same width */
+  height: 50px; /* Fixed height - all buttons same height */
+  min-width: 120px; /* Ensures minimum width */
+  max-width: 120px; /* Ensures maximum width (prevents expansion) */
+  min-height: 50px; /* Ensures minimum height */
+  max-height: 50px; /* Ensures maximum height (prevents expansion) */
+  
+  /* APPROACH 2: MODERN/BEST PRACTICE WAY (Alternative - Commented Out)
+     ===================================================================
+     This is the MODERN and RECOMMENDED approach for flexbox layouts.
+     - Cleaner and more concise (1 property instead of 6)
+     - Better for responsive design
+     - More semantic - uses flexbox properties as intended
+     - Requires understanding of flex properties
+     - Best practice in modern React/CSS development
+     
+     To use this approach, replace the above 6 properties with:
+     flex: 0 0 120px;  // flex-grow: 0, flex-shrink: 0, flex-basis: 120px
+     height: 50px;     // Height still needs to be set explicitly
+     */
+  /* flex: 0 0 120px; */ /* Uncomment to use modern approach */
+  
+  /* TEXT HANDLING: */
+  overflow: hidden; /* Hides text that overflows button */
+  white-space: nowrap; /* Prevents text from wrapping to multiple lines */
+  text-overflow: ellipsis; /* Shows "..." if text is too long */
+
+  
+  /* ============================================
+     TEXT CENTERING - TWO APPROACHES:
+     ============================================ */
+  
+  /* APPROACH 1: STANDARD/TRADITIONAL WAY (Currently Used)
+     =====================================================
+     This is the MOST COMMON approach for centering text.
+     - Simple and straightforward
+     - Works for single-line text
+     - Standard practice for text alignment
+     - Only centers horizontally
+     */
+  text-align: center; /* Centers text horizontally */
+  
+  /* APPROACH 2: MODERN/BEST PRACTICE WAY (Alternative - Commented Out)
+     ===================================================================
+     This is the BEST approach when using flexbox for buttons.
+     - Perfect centering (both horizontal and vertical)
+     - More flexible for complex content
+     - Best practice when button is already a flex container
+     - Requires display: flex first
+     
+     To use this approach, uncomment below and remove text-align: center:
+     */
+  /* display: flex; */
+  /* align-items: center; */ /* Centers vertically */
+  /* justify-content: center; */ /* Centers horizontally */
+  
+  /* ============================================
+     RECOMMENDATION:
+     ============================================
+     - STANDARD WAY: Use min/max + text-align (current approach)
+       → Best for: Learning, simple projects, maximum compatibility
+     
+     - BEST WAY: Use flex properties + flexbox centering
+       → Best for: Modern projects, flexbox layouts, cleaner code
+     
+     Both approaches work perfectly! Choose based on your project needs.
+     */
+}
